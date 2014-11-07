@@ -36,6 +36,7 @@ function basic {
 	# Basic memory configuration ; for more, see tuning()
 	#add -Xms32m
 	add -Xmx512m
+	#add -Xss1M
 	#add -XX:MaxPermSize=256m
 
 	# Disable System.gc() calls.
