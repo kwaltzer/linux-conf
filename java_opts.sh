@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Java opts setting files
 # This file should be used with caution ; be sure to understand the flags before using them !
 # No configuration is magic, no configuration is eternal.
@@ -88,7 +89,7 @@ function debug {
 
 function profile {
 	# Activate jmc profiler (JRE 7u45+)
-	#add -XX:+UnlockCommercialFeatures -XX:+FlightRecorder
+	add -XX:+UnlockCommercialFeatures -XX:+FlightRecorder
 
 	# Hprof help
 	#add -Xrunhprof:help
@@ -103,6 +104,7 @@ function monitoring {
 		add -XX:+PrintGCDetails
 		add -XX:+PrintGCApplicationStoppedTime # Print GC pauses duration
 		add -XX:+PrintTenuringDistribution # Useful to detect premature promotion
+	;;
 	"dev" | "prod")
 		add -Xloggc:$LOG_FOLDER/gc/gc.log
 		add -XX:+UseGCLogFileRotation
